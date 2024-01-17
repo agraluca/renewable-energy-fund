@@ -50,7 +50,7 @@ export default function SignIn() {
           <Button>Log in</Button>
         </StyledView>
         <StyledView className="flex-row self-center font-poppinsRegular text-xs text-neutral-1 mt-10">
-          <StyledText className="font-poppinsMedium text-xs text-neutral-4 mr-[5px]">
+          <StyledText className="font-poppinsMedium text-xs text-neutral-1 mr-[5px]">
             Don&apos;t have an account?
           </StyledText>
 

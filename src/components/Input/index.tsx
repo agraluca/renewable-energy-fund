@@ -38,12 +38,15 @@ export default function Input({
       <StyledText className="text-xs font-poppinsSemiBold text-text-default mb-2">
         {label}
       </StyledText>
-      <StyledView className="p-3 flex-row border-[2px] border-button-disabled rounded-[15px] bg-white items-center justify-between">
+      <StyledView className="p-2 flex-row border-[2px] border-button-disabled rounded-[15px] bg-white items-center justify-between">
         <StyledInput
           {...rest}
-          className={cn("text-neutral-1 font-poppinsMedium text-sm w-[100%]", {
-            "w-[90%]": showPasswordVisibilityIcon,
-          })}
+          className={cn(
+            "text-neutral-1 font-poppinsMedium text-sm leading-[150%] w-[100%]",
+            {
+              "w-[90%]": showPasswordVisibilityIcon,
+            }
+          )}
           placeholderTextColor="#CBCBCB"
           autoCorrect={false}
           placeholder={placeholder}
