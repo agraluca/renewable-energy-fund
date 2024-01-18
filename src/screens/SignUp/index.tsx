@@ -12,7 +12,7 @@ import Checkbox from "../../components/Checkbox";
 
 export default function SignUp() {
   return (
-    <Base title="Log In">
+    <Base title="Sign Up">
       <StyledView className="flex-1 bg-white rounded-t-[40px] p-6">
         <StyledText className="font-poppinsSemiBold text-2xl text-primary-1">
           Create an account
