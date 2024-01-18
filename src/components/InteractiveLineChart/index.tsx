@@ -1,4 +1,3 @@
-import { styled } from "nativewind";
 import React, { useState } from "react";
 import { Dimensions, Text, View } from "react-native";
 import { LineChart } from "react-native-chart-kit";
@@ -33,23 +32,19 @@ export default function InteractiveChart() {
 
   return (
     <>
-      <StyledView className="self-start">
-        <StyledText className="font-poppinsSemiBold text-neutral-1">
-          Insights
-        </StyledText>
+      <View className="self-start">
+        <Text className="font-poppinsSemiBold text-neutral-1">Insights</Text>
         {tooltipData && (
-          <StyledView className="flex-row items-end space-x-1">
-            <StyledText className="text-primary-1 text-2xl">
-              {tooltipData}
-            </StyledText>
-            <StyledText className="font-poppinsSemiBold text-xs text-text-default">
+          <View className="flex-row items-end space-x-1">
+            <Text className="text-primary-1 text-2xl">{tooltipData}</Text>
+            <Text className="font-poppinsSemiBold text-xs text-text-default">
               USD
-            </StyledText>
-          </StyledView>
+            </Text>
+          </View>
         )}
-      </StyledView>
+      </View>
 
-      <StyledView>
+      <View>
         <LineChart
           onDataPointClick={handleDataPointClick}
           data={{
@@ -109,10 +104,7 @@ export default function InteractiveChart() {
             }
           }}
         />
-      </StyledView>
+      </View>
     </>
   );
 }
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
