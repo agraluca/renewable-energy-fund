@@ -1,3 +1,10 @@
+# Screenshots
+
+<img src=".github/sign-in.png" width="24%" />
+<img src=".github/sign-up.png" width="24%" />
+<img src=".github/dashboard.png" width="24%" />
+<img src=".github/send-money.png" width="24%" />
+
 # Customer Management Web Application
 
 Welcome to the Renewable Energy Fund project. This README provides essential information about the project, including requirements, scripts, libraries, and design patterns used.
