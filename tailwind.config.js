@@ -1,7 +1,11 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./App.{js,jsx,ts,tsx}", "./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./App.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/app/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -23,6 +27,7 @@ module.exports = {
         },
         text: {
           1: "#FFF",
+          2: "#989898",
           default: "#979797",
         },
         button: {
@@ -30,12 +35,16 @@ module.exports = {
         },
         neutral: {
           1: "#343434",
-          4: "#CACACA",
-          2: "#ECECEC",
+          2: "#CACACA",
+          3: "#E0E0E0",
+          4: "#ECECEC",
           6: "#FFF",
         },
         green: {
           6: "#1CB999",
+        },
+        orange: {
+          3: "#FFAF2A",
         },
       },
     },

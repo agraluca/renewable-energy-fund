@@ -8,23 +8,34 @@ import {
 
 import { useState } from "react";
 
-import { styled } from "nativewind";
-
 import Eye from "../../assets/svgs/Eye";
 
 import { cn } from "../../utils/cn";
+import {
+  FieldValues,
+  UseControllerProps,
+  useController,
+} from "react-hook-form";
 
-export type InputProps = {
+export type InputProps<T extends FieldValues> = UseControllerProps<T> & {
   label: string;
   showPasswordVisibilityIcon?: boolean;
+  prefix?: string;
+  error?: string;
 } & TextInputProps;
 
-export default function Input({
+export default function Input<T extends FieldValues>({
   label,
   placeholder,
   showPasswordVisibilityIcon = false,
-  ...rest
-}: InputProps) {
+  prefix,
+  error,
+  ...controllerProps
+}: InputProps<T>) {
+  const {
+    field: { onChange, value },
+  } = useController(controllerProps);
+
   const [isPasswordSecure, setIsPasswordSecure] = useState(
     showPasswordVisibilityIcon
   );
@@ -34,13 +45,16 @@ export default function Input({
   };
 
   return (
-    <StyledView>
-      <StyledText className="text-xs font-poppinsSemiBold text-text-default mb-2">
+    <View>
+      <Text className="text-xs font-poppinsSemiBold text-text-default mb-2">
         {label}
-      </StyledText>
-      <StyledView className="p-2 flex-row border-[2px] border-button-disabled rounded-[15px] bg-white items-center justify-between">
-        <StyledInput
-          {...rest}
+      </Text>
+      <View className="p-2 flex-row border-[2px] border-button-disabled rounded-[15px] bg-white items-center justify-between">
+        {!!value && (prefix ? <Text>{prefix}</Text> : null)}
+        <TextInput
+          {...controllerProps}
+          onChangeText={onChange}
+          value={value.toString()}
           className={cn(
             "text-neutral-1 font-poppinsMedium text-sm leading-[150%] w-[100%]",
             {
@@ -53,16 +67,16 @@ export default function Input({
           secureTextEntry={isPasswordSecure}
         />
         {showPasswordVisibilityIcon && (
-          <StyledTouchableOpacity onPress={toggleShowPassword}>
+          <TouchableOpacity onPress={toggleShowPassword}>
             <Eye />
-          </StyledTouchableOpacity>
+          </TouchableOpacity>
         )}
-      </StyledView>
-    </StyledView>
+      </View>
+      {!!error && (
+        <Text className="text-xs font-poppinsSemiBold text-red-500 mt-2">
+          {error}
+        </Text>
+      )}
+    </View>
   );
 }
-
-const StyledView = styled(View);
-const StyledText = styled(Text);
-const StyledInput = styled(TextInput);
-const StyledTouchableOpacity = styled(TouchableOpacity);

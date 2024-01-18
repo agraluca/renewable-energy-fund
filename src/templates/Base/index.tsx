@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import Navbar from "../../components/Navbar";
-import { styled } from "nativewind";
-import { Platform, View, StatusBar } from "react-native";
+import { View, StatusBar, SafeAreaView } from "react-native";
 import MultipleCards from "../../assets/svgs/MultipleCards";
 
 export type BaseProps = {
@@ -15,32 +14,34 @@ export default function Base({
   title,
   showBalance = false,
 }: BaseProps) {
-  const statusHeight = StatusBar.currentHeight;
+  const statusHeight = StatusBar.currentHeight || 0;
 
   return (
     <>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="#3629B7"
-        hidden={false}
-        animated
-      />
-      <StyledView
+      <SafeAreaView
         className="flex-1 bg-primary-1"
         style={{
-          marginTop: Platform.OS === "android" ? statusHeight : 0,
+          marginTop: statusHeight,
         }}
       >
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="#3629B7"
+          hidden={false}
+          animated
+        />
         <Navbar title={title} showBalance={showBalance} />
         {showBalance && (
-          <StyledView className="absolute items-center  top-[80px] z-10">
+          <View
+            pointerEvents="none"
+            className="absolute top-[110px] left-8 z-10"
+            style={{ marginTop: statusHeight ? 0 : 50 }}
+          >
             <MultipleCards />
-          </StyledView>
+          </View>
         )}
         {children}
-      </StyledView>
+      </SafeAreaView>
     </>
   );
 }
-
-const StyledView = styled(View);
