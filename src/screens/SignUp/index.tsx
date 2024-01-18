@@ -13,7 +13,10 @@ export default function SignUp() {
   const { control, errors, handleSubmit, handleSignUp } = useSignUp();
   return (
     <Base title="Sign Up">
-      <ScrollView className="flex-1 bg-white rounded-t-[40px] p-6">
+      <ScrollView
+        className="flex-1 bg-white rounded-t-[40px] p-6"
+        showsVerticalScrollIndicator={false}
+      >
         <View className="pb-10">
           <Text className="font-poppinsSemiBold text-2xl text-primary-1">
             Create an account

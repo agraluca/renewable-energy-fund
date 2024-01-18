@@ -47,7 +47,7 @@ export default function SendMoney() {
         hidden={false}
         animated
       />
-      <ScrollView className="p-6">
+      <ScrollView className="p-6" showsVerticalScrollIndicator={false}>
         <View className="pb-14">
           <Pressable
             onPress={() => router.replace("/dashboard")}
@@ -75,7 +75,7 @@ export default function SendMoney() {
             <Text className="font-poppinsSemiBold text-text-2 text-xs pt-6">
               Choose transaction
             </Text>
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <Controller
                 control={control}
                 name="transactionType"
@@ -106,7 +106,7 @@ export default function SendMoney() {
               </Text>
             </View>
 
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <Controller
                 control={control}
                 name="payee"

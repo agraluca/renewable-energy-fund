@@ -16,7 +16,7 @@ export default function Dashboard() {
   usePermission();
   return (
     <Base title="Current account" showBalance>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex-1 px-6 bg-white items-center rounded-t-[40px] pt-[132px]">
           <TouchableOpacity
             onPress={() => router.replace("/send-money")}
