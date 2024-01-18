@@ -1,7 +1,5 @@
 import { Slot } from "expo-router";
 
-import { withExpoSnack } from "nativewind";
-
 import {
   useFonts,
   Poppins_400Regular,
@@ -9,7 +7,9 @@ import {
   Poppins_600SemiBold,
 } from "@expo-google-fonts/poppins";
 
-function RootLayout() {
+import { RootSiblingParent } from "react-native-root-siblings";
+
+function HomeLayout() {
   const [fontsLoaded, fontError] = useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
@@ -20,10 +20,10 @@ function RootLayout() {
     return null;
   }
   return (
-    <>
+    <RootSiblingParent>
       <Slot />
-    </>
+    </RootSiblingParent>
   );
 }
 
-export default withExpoSnack(RootLayout);
+export default HomeLayout;

@@ -1,6 +1,5 @@
 import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 
-import { styled } from "nativewind";
 import { ReactNode } from "react";
 
 export type ButtonProps = {
@@ -9,16 +8,13 @@ export type ButtonProps = {
 
 export default function Button({ children, ...rest }: ButtonProps) {
   return (
-    <StyledButton
+    <TouchableOpacity
       {...rest}
       className="bg-primary-1 rounded-[15px] border-none p-[10px] items-center"
     >
-      <StyledText className="text-neutral-6 text-base font-poppinsMedium">
+      <Text className="text-neutral-6 text-base font-poppinsMedium">
         {children}
-      </StyledText>
-    </StyledButton>
+      </Text>
+    </TouchableOpacity>
   );
 }
-
-const StyledButton = styled(TouchableOpacity);
-const StyledText = styled(Text);
