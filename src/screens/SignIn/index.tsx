@@ -47,7 +47,9 @@ export default function SignIn() {
           Forgot your password?
         </StyledLink>
         <StyledView className="mt-10">
-          <Button>Log in</Button>
+          <Button>
+            <Link href="/dashboard">Log in</Link>
+          </Button>
         </StyledView>
         <StyledView className="flex-row self-center font-poppinsRegular text-xs text-neutral-1 mt-10">
           <StyledText className="font-poppinsMedium text-xs text-neutral-1 mr-[5px]">

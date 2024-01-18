@@ -18,6 +18,9 @@ module.exports = {
           2: "#5655B9",
           4: "#F2F1F9",
         },
+        purple: {
+          4: "#E5E2FF",
+        },
         text: {
           1: "#FFF",
           default: "#979797",
@@ -28,7 +31,11 @@ module.exports = {
         neutral: {
           1: "#343434",
           4: "#CACACA",
+          2: "#ECECEC",
           6: "#FFF",
+        },
+        green: {
+          6: "#1CB999",
         },
       },
     },
