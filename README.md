@@ -1,9 +1,6 @@
-# Screenshots
+# Preview
 
-<img src=".github/sign-in.png" width="24%" />
-<img src=".github/sign-up.png" width="24%" />
-<img src=".github/dashboard.png" width="24%" />
-<img src=".github/send-money.png" width="24%" />
+<img src=".github/renewable-app.png" width="100%" />
 
 # Customer Management Web Application
 
