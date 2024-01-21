@@ -2,7 +2,7 @@
 
 <img src=".github/renewable-app.png" width="100%" />
 
-# Customer Management Application
+# Renewable Energy Fund
 
 Welcome to the Renewable Energy Fund project. This README provides essential information about the project, including requirements, scripts, libraries, and design patterns used.
 
